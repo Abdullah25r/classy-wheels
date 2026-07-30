@@ -66,20 +66,21 @@ export const cars: Car[] = models.map((m, i) => {
   const img = POOL[i % POOL.length];
   const img2 = POOL[(i + 3) % POOL.length];
   const img3 = POOL[(i + 6) % POOL.length];
+  const year = 2021 + (i % 5);
   return {
     id: `${m.brand.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${m.model
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")}`,
     brand: m.brand,
     model: m.model,
-    year: 2021 + (i % 5),
+    year: year,
     mileage: `${(8 + (i % 12) * 3).toString()},${(200 + i * 37) % 900}00 km`.replace(",", ","),
     transmission: i % 4 === 0 ? "Manual" : "Automatic",
     fuel: m.model.includes("e-tron") || m.model.includes("500h") ? "Hybrid" : "Petrol",
     price: 45000 + i * 8250 + (m.brand === "Lamborghini" ? 180000 : 0) + (m.brand === "Porsche" ? 40000 : 0),
     image: IMG(img),
     gallery: [IMG(img), IMG(img2), IMG(img3)],
-    description: `A meticulously inspected ${m.year ?? 2023} ${m.brand} ${m.model}, finished to showroom condition and backed by the Classy Wheels certified ownership promise.`,
+    description: `A meticulously inspected ${year} ${m.brand} ${m.model}, finished to showroom condition and backed by the Classy Wheels certified ownership promise.`,
     features: [
       "Full service history",
       "Certified 200-point inspection",
