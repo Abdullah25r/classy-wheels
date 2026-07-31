@@ -27,7 +27,7 @@ export default function AboutPage() {
             <p className="text-white/55 mt-4 leading-relaxed">
               Today our team of certified technicians, valuation specialists, and client advisors
               work as one unit, so every handover feels less like a transaction and more like a
-              welcome into the Classy Wheels circle.
+              welcome into the Classy Wheels Circle.
             </p>
           </div>
           <div className="relative h-[420px] rounded-3xl overflow-hidden border border-gold/15">
